@@ -7,6 +7,27 @@ basePath: /v1
 schemes:
   - https
 paths:
+  /:
+    get:
+      description: |
+        Gets root of API
+      produces:
+        - text/html
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-powered-by:
+              type: string
+              default: Kemal
+            content-type:
+              type: string
+              default: 'text/html'
+            content-length:
+              type: integer
+              default: 12
+          schema:
+            type: string
   /sessions:
     post:
       description: |

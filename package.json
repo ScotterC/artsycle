@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "test": "dredd"
+    "test": "dredd",
+    "validate": "swagger validate api-spec.yaml"
   },
   "dependencies": {
-    "dredd": "^4.1.2"
+    "dredd": "^4.1.2",
+    "swagger": "^0.7.5"
   }
 }
