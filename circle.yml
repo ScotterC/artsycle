@@ -1,6 +1,0 @@
-dependencies:
-  pre:
-    - npm install -g dredd@4.1.2
-test:
-  pre:
-    - dredd
