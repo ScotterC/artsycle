@@ -1,0 +1,297 @@
+swagger: '2.0'
+info:
+  version: 0.0.0
+  title: Artyscle
+host: api.artsicle.com
+basePath: /v1
+schemes:
+  - https
+paths:
+  /sessions:
+    post:
+      description: |
+        Creates a session
+      responses:
+        '200':
+          description: OK
+  '/sessions/{sessionId}':
+    get:
+      description: |
+        Gets a session
+      parameters:
+        - in: path
+          name: sessionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    delete:
+      description: |
+        Delete a session
+      parameters:
+        - in: path
+          name: sessionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  /users:
+    get:
+      description: |
+        Gets `User` objects.
+        Optional **type** query to filter for Users of type Artists
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: type
+          in: query
+          description: Type of User
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            title: ArrayOfUsers
+            type: array
+            items:
+              title: User
+              type: object
+              properties:
+                name:
+                  type: string
+                single:
+                  type: boolean
+  /users/me:
+    get:
+      description: |
+        Gets the logged in user
+      responses:
+        '200':
+          description: OK
+  '/users/{userId}':
+    get:
+      description: |
+        Gets a `User` object.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    put:
+      description: |
+        Updates a `User` object
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  '/users/{userId}/artworks':
+    get:
+      description: |
+        Gets the artworks of the user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    post:
+      description: |
+        Creates an artwork for a user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  '/users/{userId}/artworks/{artworkId}':
+    get:
+      description: |
+        Gets an artwork of the user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+        - in: path
+          name: artworkId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    put:
+      description: |
+        Updates an artwork of the user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+        - in: path
+          name: artworkId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    delete:
+      description: |
+        Deletes an artwork of the user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+        - in: path
+          name: artworkId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  /artworks:
+    get:
+      description: |
+        Gets all artworks
+      responses:
+        '200':
+          description: OK
+  '/artworks/{artworkId}':
+    get:
+      description: |
+        Gets an artwork
+      parameters:
+        - in: path
+          name: artworkId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  /collections:
+    get:
+      description: |
+        Gets a collection
+      responses:
+        '200':
+          description: OK
+    post:
+      description: |
+        Creates a collection
+      responses:
+        '200':
+          description: OK
+  '/collections/{collectionId}':
+    get:
+      description: |
+        Gets a collection
+      parameters:
+        - in: path
+          name: collectionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    put:
+      description: |
+        Updates a collection
+      parameters:
+        - in: path
+          name: collectionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+    delete:
+      description: |
+        Deletes a collection
+      parameters:
+        - in: path
+          name: collectionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  '/collections/{collectionId}/users':
+    get:
+      description: |
+        Gets users within a collection
+      parameters:
+        - in: path
+          name: collectionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
+  '/collections/{collectionId}/artworks':
+    get:
+      description: |
+        Gets artworks within a collection
+      parameters:
+        - in: path
+          name: collectionId
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        '200':
+          description: OK
