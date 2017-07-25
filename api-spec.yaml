@@ -24,6 +24,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -37,6 +38,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -91,6 +93,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -104,6 +107,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -118,6 +122,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -131,6 +136,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -145,12 +151,14 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
         - in: path
           name: artworkId
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -164,12 +172,14 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
         - in: path
           name: artworkId
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -183,12 +193,14 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
         - in: path
           name: artworkId
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -210,6 +222,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -237,6 +250,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -250,6 +264,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -263,6 +278,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -277,6 +293,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':
@@ -291,6 +308,7 @@ paths:
           required: true
           type: integer
           minimum: 1
+          default: 1
           description: Parameter description in Markdown.
       responses:
         '200':

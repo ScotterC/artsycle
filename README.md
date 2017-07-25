@@ -1,1 +1,5 @@
-Hello World
+# Hello World
+
+## Run Tests
+
+`make test`
