@@ -2,7 +2,7 @@ dry-run: null
 hookfiles: null
 language: ruby
 sandbox: false
-server: null
+server: yarn start
 server-wait: 3
 init: false
 custom: {}

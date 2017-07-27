@@ -1,7 +1,8 @@
 {
   "scripts": {
     "test": "dredd",
-    "validate": "swagger validate api-spec.yaml"
+    "validate": "swagger validate api-spec.yaml",
+    "start": "crystal src/artsicle.cr"
   },
   "dependencies": {
     "dredd": "^4.1.2",

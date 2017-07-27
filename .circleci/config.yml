@@ -21,9 +21,26 @@ jobs:
 
       - run: yarn install
 
+      - run:
+          name: Install Crystal
+          command: |
+            if [[ ! -e "${HOME}/.crystal/bin/crystal" || $(crystal --version | grep -P -o '\d+\.\d+\.\d+') != "${CRYSTAL_VERSION}" ]]; then
+              mkdir "${HOME}/.crystal"
+              wget "${CRYSTAL_URL}" -O "${HOME}/crystal.tar.gz" &&\
+              tar -zxvf "${HOME}/crystal.tar.gz" -C "${HOME}/.crystal" --strip-components=1
+            fi
+          environment:
+            CRYSTAL_VERSION: 0.21.1
+            CRYSTAL_URL: "https://github.com/crystal-lang/crystal/releases/download/${CRYSTAL_VERSION}/crystal-${CRYSTAL_VERSION}-1-linux-x86_64.tar.gz"
+
+      - run: crystal deps
+
       - save_cache:
           paths:
             - node_modules
+            - ~/.crystal
+            - lib
+            - .shards
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn test
