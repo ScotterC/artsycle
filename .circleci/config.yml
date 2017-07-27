@@ -25,12 +25,12 @@ jobs:
           name: Install Crystal
           command: sh scripts/crystal_install.sh
 
-      - run: crystal deps
+      - run: ~/artsycle/.crystal/bin/crystal deps
 
       - save_cache:
           paths:
             - node_modules
-            - ~/.crystal
+            - ~/artsycle/.crystal
             - lib
             - .shards
           key: v1-dependencies-{{ checksum "package.json" }}
