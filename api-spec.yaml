@@ -7,9 +7,9 @@ basePath: /v1
 schemes:
   - https
 consumes:
-  - application/json
+  - application/json; charset=utf-8
 produces:
-  - application/json
+  - application/json; charset=utf-8
 paths:
   /:
     get:
@@ -18,15 +18,11 @@ paths:
       responses:
         '200':
           description: OK
-          headers:
-            content-type:
-              type: string
-              default: application/json
-            content-length:
-              type: integer
-              default: 12
-          schema:
-            type: string
+          examples:
+            application/json: |-
+              {
+                "message": "Hello World"
+              }
   /sessions:
     post:
       description: |

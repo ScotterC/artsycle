@@ -48,6 +48,11 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
+# Pretty Print JSON in Dev
+# https://stackoverflow.com/questions/38278274/make-phoenix-controller-to-output-pretty-json
+config :phoenix, :format_encoders,
+  json: Artsycle.PrettyPoisonEncoder
+
 # Configure your database
 config :artsycle, Artsycle.Repo,
   adapter: Ecto.Adapters.Postgres,

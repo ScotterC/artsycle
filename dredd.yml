@@ -2,7 +2,7 @@ dry-run: null
 hookfiles: null
 language: ruby
 sandbox: false
-server: mix phx.server
+# server: mix phx.server # TODO: Need check to see if it's already running
 server-wait: 3
 init: false
 custom: {}
