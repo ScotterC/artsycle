@@ -1,11 +1,22 @@
 {
+  "repository": {},
+  "license": "MIT",
   "scripts": {
     "test": "dredd",
     "validate": "swagger validate api-spec.yaml",
-    "start": "crystal src/artsicle.cr"
+    "deploy": "brunch build --production",
+    "watch": "brunch watch --stdin"
   },
   "dependencies": {
-    "dredd": "^4.1.2",
+    "dredd": "^4.3.0",
+    "phoenix": "file:deps/phoenix",
+    "phoenix_html": "file:deps/phoenix_html",
     "swagger": "^0.7.5"
+  },
+  "devDependencies": {
+    "babel-brunch": "6.1.1",
+    "brunch": "2.10.9",
+    "clean-css-brunch": "2.10.0",
+    "uglify-js-brunch": "2.10.0"
   }
 }
