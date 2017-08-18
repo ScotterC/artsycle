@@ -1,5 +1,5 @@
-defmodule Artsycle.PageControllerTest do
-  use Artsycle.ConnCase
+defmodule ArtsycleWeb.PageControllerTest do
+  use ArtsycleWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

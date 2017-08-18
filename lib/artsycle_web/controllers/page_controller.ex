@@ -1,5 +1,5 @@
-defmodule Artsycle.PageController do
-  use Artsycle.Web, :controller
+defmodule ArtsycleWeb.PageController do
+  use ArtsycleWeb, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

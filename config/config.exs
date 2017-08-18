@@ -10,10 +10,10 @@ config :artsycle,
   ecto_repos: [Artsycle.Repo]
 
 # Configures the endpoint
-config :artsycle, Artsycle.Endpoint,
+config :artsycle, ArtsycleWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "P1M0hd310UUD22peCcyUX7m7HXSYaOdG7Fx2FcRoWdCO6AfvJ8XEgikQVR1PHUeD",
-  render_errors: [view: Artsycle.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "tOX145uY39qNYhk8IMStc4mNYlw+FBdEkqkV142vugLqy1nFAAypNlIBAO0L/n6W",
+  render_errors: [view: ArtsycleWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Artsycle.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

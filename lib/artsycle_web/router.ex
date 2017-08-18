@@ -1,5 +1,5 @@
-defmodule Artsycle.Router do
-  use Artsycle.Web, :router
+defmodule ArtsycleWeb.Router do
+  use ArtsycleWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,20 @@ defmodule Artsycle.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Artsycle do
+  scope "/v1", ArtsycleWeb do
+    pipe_through :api
+
+    get "/", ApiController, :index
+  end
+
+  scope "/", ArtsycleWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Artsycle do
+  # scope "/api", ArtsycleWeb do
   #   pipe_through :api
   # end
 end

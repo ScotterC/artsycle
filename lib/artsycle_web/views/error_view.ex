@@ -1,5 +1,5 @@
-defmodule Artsycle.ErrorView do
-  use Artsycle.Web, :view
+defmodule ArtsycleWeb.ErrorView do
+  use ArtsycleWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

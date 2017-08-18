@@ -1,4 +1,4 @@
-defmodule Artsycle.ErrorHelpers do
+defmodule ArtsycleWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule Artsycle.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Artsycle.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ArtsycleWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Artsycle.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ArtsycleWeb.Gettext, "errors", msg, opts)
     end
   end
 end

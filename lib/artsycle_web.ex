@@ -1,12 +1,12 @@
-defmodule Artsycle.Web do
+defmodule ArtsycleWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use Artsycle.Web, :controller
-      use Artsycle.Web, :view
+      use ArtsycleWeb, :controller
+      use ArtsycleWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -17,32 +17,19 @@ defmodule Artsycle.Web do
   and import those modules here.
   """
 
-  def model do
-    quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-    end
-  end
-
   def controller do
     quote do
-      use Phoenix.Controller
-
-      alias Artsycle.Repo
-      import Ecto
-      import Ecto.Query
-
-      import Artsycle.Router.Helpers
-      import Artsycle.Gettext
+      use Phoenix.Controller, namespace: ArtsycleWeb
+      import Plug.Conn
+      import ArtsycleWeb.Router.Helpers
+      import ArtsycleWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "web/templates"
+      use Phoenix.View, root: "lib/artsycle_web/templates",
+                        namespace: ArtsycleWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
@@ -50,26 +37,24 @@ defmodule Artsycle.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Artsycle.Router.Helpers
-      import Artsycle.ErrorHelpers
-      import Artsycle.Gettext
+      import ArtsycleWeb.Router.Helpers
+      import ArtsycleWeb.ErrorHelpers
+      import ArtsycleWeb.Gettext
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+      import Plug.Conn
+      import Phoenix.Controller
     end
   end
 
   def channel do
     quote do
       use Phoenix.Channel
-
-      alias Artsycle.Repo
-      import Ecto
-      import Ecto.Query
-      import Artsycle.Gettext
+      import ArtsycleWeb.Gettext
     end
   end
 
