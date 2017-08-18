@@ -2,7 +2,7 @@ dry-run: null
 hookfiles: null
 language: ruby
 sandbox: false
-server: yarn start
+server: mix phx.server
 server-wait: 3
 init: false
 custom: {}
@@ -31,4 +31,4 @@ hooks-worker-handler-host: 127.0.0.1
 hooks-worker-handler-port: 61321
 config: ./dredd.yml
 blueprint: api-spec.yaml
-endpoint: 'http://127.0.0.1:3000'
+endpoint: 'http://127.0.0.1:4000'

@@ -5,34 +5,53 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:7.10
     working_directory: ~/artsycle
-
+    docker:
+      - image: elixir:1.5.1
+        environment:
+          - MIX_ENV: test
+      - image: postgres:9.6.4
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            mix local.rebar --force
+            mix local.hex --force
+            mix deps.get
+      # - run:
+      #     name: 'Install Nodejs & Yarn'
+      #     command: |
+      #         curl -sL https://deb.nodesource.com/setup_6.x | bash -
+      #         apt-get install -y build-essential nodejs
+      #         curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      #         echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+      #         apt-get update && apt-get install yarn
+      #         export PATH=$PATH:$PWD/node_modules/.bin
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+      # # Download and cache dependencies
+      # - restore_cache:
+      #     keys:
+      #         - yarn-cache-{{ checksum "yarn.lock" }}
 
-      - run: yarn install
+      # - run:
+      #     name: "Install Dependencies"
+      #     command: |
+      #         yarn install
+      #         mix deps.get
+
+      - run: mix ecto.create
 
       - run:
-          name: Install Crystal
-          command: sh scripts/crystal_install.sh
+          name: Compile Elixir Code
+          command: mix compile
+      - run:
+          name: Run Tests
+          command: mix test
 
-      - run: ~/artsycle/.crystal/bin/crystal deps
+      # - save_cache:
+      #     key: yarn-cache-{{ checksum "yarn.lock" }}
+      #     paths:
+      #         - node_modules
 
-      - save_cache:
-          paths:
-            - node_modules
-            - ~/artsycle/.crystal
-            - lib
-            - .shards
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run: yarn test
+      # - run: yarn test
