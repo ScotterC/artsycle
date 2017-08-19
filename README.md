@@ -11,14 +11,16 @@ Testing
 - `yarn test`
 - `mix test`
 
-Libraries to explore later
+Static Code Analysis [Credo](https://github.com/rrrene/credo)
 
+- `mix credo`
+
+Libraries to explore later
 - https://github.com/xerions/phoenix_swagger
-- https://github.com/rrrene/credo
 
 ### TODO
 
-- Dredd not running on circleci. [See Here]](https://gist.github.com/Pierstoval/ee5f9372a82158fb3b80abb6a10a5d1b)
+- Dredd not running on circleci. [See Here](https://gist.github.com/Pierstoval/ee5f9372a82158fb3b80abb6a10a5d1b)
 
 To start your Phoenix server:
 

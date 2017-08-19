@@ -1,8 +1,13 @@
 defmodule Artsycle.Application do
+
+  @moduledoc """
+  Main application module. Supervisor for Artsycle.Repo and Artsycle.Endpoint.
+  See https://hexdocs.pm/elixir/Application.html
+  for more information on OTP Applications
+  """
+
   use Application
 
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec
 

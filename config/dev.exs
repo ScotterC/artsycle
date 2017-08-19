@@ -49,7 +49,6 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Pretty Print JSON in Dev
-# https://stackoverflow.com/questions/38278274/make-phoenix-controller-to-output-pretty-json
 config :phoenix, :format_encoders,
   json: Artsycle.PrettyPoisonEncoder
 
