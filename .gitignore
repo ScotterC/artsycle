@@ -26,4 +26,8 @@ npm-debug.log
 # variables.
 /config/*.secret.exs
 
+.DS_Store
+query_result.csv
 node_modules
+2017-06-30.sql.gz
+2017-06-30.sql

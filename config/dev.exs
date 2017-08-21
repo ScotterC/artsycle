@@ -58,6 +58,6 @@ config :artsycle, Artsycle.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "artsycle_dev",
+  database: "artsicle_dump",
   hostname: "localhost",
   pool_size: 10

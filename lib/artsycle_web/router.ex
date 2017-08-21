@@ -17,6 +17,7 @@ defmodule ArtsycleWeb.Router do
     pipe_through :api
 
     get "/", ApiController, :index
+    resources "/users", UserController, except: [:new, :edit]
   end
 
   scope "/", ArtsycleWeb do

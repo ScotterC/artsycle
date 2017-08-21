@@ -1,0 +1,13 @@
+LOAD CSV
+     FROM 'query_result.csv' (id, email, first_name, last_name, username, permalink, type, deleted_at, created_at, updated_at)
+     INTO postgresql://localhost/artsycle_dev?users (id, email, first_name, last_name, username, permalink, type, deleted_at, inserted_at, updated_at)
+
+     WITH truncate,
+          skip header = 1,
+          fields optionally enclosed by '"',
+          fields escaped by double-quote,
+          fields terminated by ','
+
+      SET client_encoding to 'latin1',
+          work_mem to '12MB',
+          standard_conforming_strings to 'on'

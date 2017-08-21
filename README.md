@@ -13,8 +13,14 @@ Testing
 
 Libraries to explore later
 
-- https://github.com/xerions/phoenix_swagger
-- https://github.com/rrrene/credo
+- https://github.com/xerions/phoenix_swagger (replace Dredd?)
+- https://github.com/rrrene/credo (linter)
+- https://github.com/ueberauth/guardian (authentication)
+- https://github.com/gjaldon/ecto_enum (users table Artist/User etc)
+
+```
+pgloader mysql://root@localhost/artsicle_dump postgresql://localhost/artsicle_dump
+```
 
 ### TODO
 

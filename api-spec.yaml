@@ -99,10 +99,6 @@ paths:
     get:
       description: |
         Gets a `User` object.
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
         - in: path
           name: userId
@@ -110,10 +106,14 @@ paths:
           type: integer
           minimum: 1
           default: 1
-          description: Parameter description in Markdown.
+          description: User's ID
       responses:
-        '200':
-          description: OK
+        default:
+          description: Bad Request
+        200:
+          description: Successful Response
+          schema:
+            $ref: '#/definitions/User'
     put:
       description: |
         Updates a `User` object
@@ -329,3 +329,19 @@ paths:
       responses:
         '200':
           description: OK
+definitions:
+  User:
+    required:
+      - email
+      - name
+      - username
+    properties:
+      email:
+        type: string
+        default: 'artist@example.com'
+      name:
+        type: string
+        default: "Artist Example"
+      username:
+        type: string
+        default: "artistex"
