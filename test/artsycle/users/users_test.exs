@@ -1,3 +1,4 @@
+require IEx
 defmodule Artsycle.UsersTest do
   use Artsycle.DataCase
 
@@ -21,7 +22,14 @@ defmodule Artsycle.UsersTest do
 
     test "list_users/0 returns all users" do
       user = user_fixture()
-      assert Users.list_users() == [user]
+      {users, _} = Users.list_users({})
+      assert hd(users) == user
+    end
+
+    test "list_artists/0 returns all artists" do
+      user = user_fixture(type: "Artist")
+      {users, _} = Users.list_artists({})
+      assert hd(users) == user
     end
 
     test "get_user!/1 returns the user with given id" do

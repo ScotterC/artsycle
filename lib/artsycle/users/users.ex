@@ -16,9 +16,15 @@ defmodule Artsycle.Users do
       [%User{}, ...]
 
   """
+  # TODO: Use params to do the where lookup
   def list_users(params) do
-    query = from(user in User, where: user.type == "Artist" )
-    Repo.paginate(User, query, params)
+    query = from(user in User)
+    Repo.paginate(query)
+  end
+
+  def list_artists(params) do
+    query = from(user in User, where: user.type == "Artist")
+    Repo.paginate(query)
   end
 
   # def list_artists() do

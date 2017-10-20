@@ -19,7 +19,7 @@ defmodule Artsycle.Users.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:email, :first_name, :last_name, :username])
+    |> cast(attrs, [:email, :first_name, :last_name, :username, :type])
     |> validate_required([:email, :first_name, :last_name, :username])
   end
 end
